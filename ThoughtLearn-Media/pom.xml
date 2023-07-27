@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>ThoughtLearn-Parent</artifactId>
+        <groupId>cn.tw</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../ThoughtLearn-Parent</relativePath>
+    </parent>
+    <artifactId>ThoughtLearn-Media</artifactId>
+    <name>ThoughtLearn-Media</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>ThoughtLearn-Media-Api</module>
+        <module>ThoughtLearn-Media-Service</module>
+        <module>ThoughtLearn-Media-Model</module>
+    </modules>
+
+</project>

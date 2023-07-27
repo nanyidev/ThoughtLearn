@@ -1,0 +1,33 @@
+#server:
+#  servlet:
+#    context-path: /media
+#  port: 63050
+
+spring:
+  application:
+    name: media-api
+  profiles:
+    active: k12dev
+
+    # 微服务配置
+  cloud:
+    nacos:
+      server-addr: 192.168.101.65:8848
+      discovery: # 服务注册
+        namespace: oledu_dev
+        group: OlEdu-K12-Project
+      config:
+        namespace: oledu_dev
+        group: OlEdu-K12-Project
+        file-extension: yaml
+        refresh-enabled: true
+        extension-configs:
+          - data-id: media-service-${spring.profiles.active}.yaml
+            group: OlEdu-K12-Project
+            refresh: true
+
+# 日志文件配置路径
+#logging:
+#  config: classpath:log4j2-dev.xml
+
+lesson: SpringBoot
