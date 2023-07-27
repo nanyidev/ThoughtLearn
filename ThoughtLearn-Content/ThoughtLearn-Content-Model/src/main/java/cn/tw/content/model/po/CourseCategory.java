@@ -1,0 +1,57 @@
+package cn.tw.content.model.po;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
+import java.io.Serializable;
+
+/**
+ * <p>
+ * 课程分类
+ * </p>
+ *
+ * @author yn
+ */
+@Data
+@TableName("course_category")  // 设置当前类对应于数据库表关系（类与数据库表名映射）
+public class CourseCategory implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * 主键
+     */
+    private String id;
+
+    /**
+     * 分类名称
+     */
+    private String name;
+
+    /**
+     * 分类标签默认和名称一样
+     */
+    private String label;
+
+    /**
+     * 父结点id（第一级的父节点是0，自关联字段id）
+     */
+    private String parentid;
+
+    /**
+     * 是否显示
+     */
+    private Integer isShow;
+
+    /**
+     * 排序字段
+     */
+    private Integer orderby;
+
+    /**
+     * 是否叶子
+     */
+    private Integer isLeaf;
+
+
+}
