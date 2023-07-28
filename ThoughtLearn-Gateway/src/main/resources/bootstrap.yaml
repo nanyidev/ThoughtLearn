@@ -1,0 +1,23 @@
+#微服务配置
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.101.65:8848
+      discovery:
+        namespace: oledu_dev
+        group: OlEdu-K12-Project
+      config:
+        namespace: oledu_dev
+        group: OlEdu-K12-Project
+        file-extension: yaml
+        refresh-enabled: true
+#        shared-configs:
+#          - data-id: logging-${spring.profiles.active}.yaml
+#            group: xuecheng-plus-common
+#            refresh: true
+
+
+  profiles:
+    active: k12dev
