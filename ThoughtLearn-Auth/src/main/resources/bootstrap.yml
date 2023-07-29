@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.101.65:3306/xcplus_users?serverTimezone=UTC&userUnicode=true&useSSL=false&
+    username: root
+    password: mysql
+  cloud:
+    nacos:
+      server-addr: 192.168.101.65:8848
+      discovery:
+        namespace: oledu_dev
+        group: OlEdu-K12-Project
+      config:
+        namespace: oledu_dev
+        group: OlEdu-K12-Project
+        file-extension: yaml
+        refresh-enabled: true
+        shared-configs:
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: OlEdu-K12-Common
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: OlEdu-K12-Common
+            refresh: true
+          - data-id: feign-${spring.profiles.active}.yaml
+            group: OlEdu-K12-Common
+            refresh: true
+
+
+  profiles:
+    active: k12dev
